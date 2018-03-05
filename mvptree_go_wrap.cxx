@@ -246,7 +246,7 @@ static void* Swig_malloc(int c) {
 extern "C" {
 #endif
 
-void _wrap_Swig_free_mvptree_b0de9fb17f3d01b8(void *_swig_go_0) {
+void _wrap_Swig_free_mvptree_75f1aa138fbdf74a(void *_swig_go_0) {
   void *arg1 = (void *) 0 ;
   
   arg1 = *(void **)&_swig_go_0; 
@@ -256,7 +256,7 @@ void _wrap_Swig_free_mvptree_b0de9fb17f3d01b8(void *_swig_go_0) {
 }
 
 
-void *_wrap_Swig_malloc_mvptree_b0de9fb17f3d01b8(intgo _swig_go_0) {
+void *_wrap_Swig_malloc_mvptree_75f1aa138fbdf74a(intgo _swig_go_0) {
   int arg1 ;
   void *result = 0 ;
   void *_swig_go_result;
@@ -269,7 +269,7 @@ void *_wrap_Swig_malloc_mvptree_b0de9fb17f3d01b8(intgo _swig_go_0) {
 }
 
 
-GoMVPTree::MVPTreeWrap *_wrap_new_MVPTreeWrap_mvptree_b0de9fb17f3d01b8(_gostring_ _swig_go_0, intgo _swig_go_1, intgo _swig_go_2, intgo _swig_go_3) {
+GoMVPTree::MVPTreeWrap *_wrap_new_MVPTreeWrap_mvptree_75f1aa138fbdf74a(_gostring_ _swig_go_0, intgo _swig_go_1, intgo _swig_go_2, intgo _swig_go_3) {
   char *arg1 = (char *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -293,7 +293,7 @@ GoMVPTree::MVPTreeWrap *_wrap_new_MVPTreeWrap_mvptree_b0de9fb17f3d01b8(_gostring
 }
 
 
-intgo _wrap_MVPTreeWrap_init_mvptree_b0de9fb17f3d01b8(GoMVPTree::MVPTreeWrap *_swig_go_0) {
+intgo _wrap_MVPTreeWrap_init_mvptree_75f1aa138fbdf74a(GoMVPTree::MVPTreeWrap *_swig_go_0) {
   GoMVPTree::MVPTreeWrap *arg1 = (GoMVPTree::MVPTreeWrap *) 0 ;
   int result;
   intgo _swig_go_result;
@@ -306,7 +306,7 @@ intgo _wrap_MVPTreeWrap_init_mvptree_b0de9fb17f3d01b8(GoMVPTree::MVPTreeWrap *_s
 }
 
 
-intgo _wrap_MVPTreeWrap_add_mvptree_b0de9fb17f3d01b8(GoMVPTree::MVPTreeWrap *_swig_go_0, _gostring_ _swig_go_1, uint64_t *_swig_go_2) {
+intgo _wrap_MVPTreeWrap_add_mvptree_75f1aa138fbdf74a(GoMVPTree::MVPTreeWrap *_swig_go_0, _gostring_ _swig_go_1, long long _swig_go_2) {
   GoMVPTree::MVPTreeWrap *arg1 = (GoMVPTree::MVPTreeWrap *) 0 ;
   char *arg2 = (char *) 0 ;
   uint64_t arg3 ;
@@ -335,7 +335,7 @@ intgo _wrap_MVPTreeWrap_add_mvptree_b0de9fb17f3d01b8(GoMVPTree::MVPTreeWrap *_sw
 }
 
 
-std::vector< std::string > *_wrap_MVPTreeWrap_query_mvptree_b0de9fb17f3d01b8(GoMVPTree::MVPTreeWrap *_swig_go_0, uint64_t *_swig_go_1, intgo _swig_go_2, float _swig_go_3, intgo *_swig_go_4) {
+std::vector< std::string > *_wrap_MVPTreeWrap_query_mvptree_75f1aa138fbdf74a(GoMVPTree::MVPTreeWrap *_swig_go_0, long long _swig_go_1, intgo _swig_go_2, float _swig_go_3, intgo *_swig_go_4) {
   GoMVPTree::MVPTreeWrap *arg1 = (GoMVPTree::MVPTreeWrap *) 0 ;
   uint64_t arg2 ;
   int arg3 ;
@@ -363,7 +363,7 @@ std::vector< std::string > *_wrap_MVPTreeWrap_query_mvptree_b0de9fb17f3d01b8(GoM
 }
 
 
-intgo _wrap_MVPTreeWrap_save_mvptree_b0de9fb17f3d01b8(GoMVPTree::MVPTreeWrap *_swig_go_0) {
+intgo _wrap_MVPTreeWrap_save_mvptree_75f1aa138fbdf74a(GoMVPTree::MVPTreeWrap *_swig_go_0) {
   GoMVPTree::MVPTreeWrap *arg1 = (GoMVPTree::MVPTreeWrap *) 0 ;
   int result;
   intgo _swig_go_result;
@@ -376,28 +376,13 @@ intgo _wrap_MVPTreeWrap_save_mvptree_b0de9fb17f3d01b8(GoMVPTree::MVPTreeWrap *_s
 }
 
 
-void _wrap_delete_MVPTreeWrap_mvptree_b0de9fb17f3d01b8(GoMVPTree::MVPTreeWrap *_swig_go_0) {
+void _wrap_delete_MVPTreeWrap_mvptree_75f1aa138fbdf74a(GoMVPTree::MVPTreeWrap *_swig_go_0) {
   GoMVPTree::MVPTreeWrap *arg1 = (GoMVPTree::MVPTreeWrap *) 0 ;
   
   arg1 = *(GoMVPTree::MVPTreeWrap **)&_swig_go_0; 
   
   delete arg1;
   
-}
-
-
-float _wrap_HammingDistanceComp_mvptree_b0de9fb17f3d01b8(MVPDP *_swig_go_0, MVPDP *_swig_go_1) {
-  MVPDP *arg1 = (MVPDP *) 0 ;
-  MVPDP *arg2 = (MVPDP *) 0 ;
-  float result;
-  float _swig_go_result;
-  
-  arg1 = *(MVPDP **)&_swig_go_0; 
-  arg2 = *(MVPDP **)&_swig_go_1; 
-  
-  result = (float)GoMVPTree::HammingDistanceComp(arg1,arg2);
-  _swig_go_result = result; 
-  return _swig_go_result;
 }
 
 
