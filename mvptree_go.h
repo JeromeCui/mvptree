@@ -61,7 +61,7 @@ namespace GoMVPTree {
         /**
          * Query nearest images to target image
          */
-        std::vector<std::string> query(const uint64_t targetHash, const int kNearest, const float radius, int *errCode) {
+        std::vector<std::string> &query(const uint64_t targetHash, const int kNearest, const float radius, int *errCode) {
             MVPDP *point = dp_alloc(UINT64ARRAY);
             point->id = "";
             point->data = malloc(1*UINT64ARRAY);
@@ -73,7 +73,8 @@ namespace GoMVPTree {
             MVPDP **results = mvptree_retrieve(mTree, point, kNearest, radius, &numRes, &err);
             if (err != MVP_SUCCESS) {
                 *errCode = int(err);
-                return std::vector<std::string>();
+                std::vector<std::string> res;
+                return res;
             }
 
             std::vector<std::string> imgIds;

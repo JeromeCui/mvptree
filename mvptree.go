@@ -28,18 +28,36 @@ typedef struct { char *p; intgo n; } _gostring_;
 typedef struct { void* array; intgo len; intgo cap; } _goslice_;
 
 
-typedef _gostring_ swig_type_1;
-typedef _gostring_ swig_type_2;
+typedef long long swig_type_1;
+typedef long long swig_type_2;
 typedef long long swig_type_3;
 typedef long long swig_type_4;
-extern void _wrap_Swig_free_mvptree_75f1aa138fbdf74a(uintptr_t arg1);
-extern uintptr_t _wrap_Swig_malloc_mvptree_75f1aa138fbdf74a(swig_intgo arg1);
-extern uintptr_t _wrap_new_MVPTreeWrap_mvptree_75f1aa138fbdf74a(swig_type_1 arg1, swig_intgo arg2, swig_intgo arg3, swig_intgo arg4);
-extern swig_intgo _wrap_MVPTreeWrap_init_mvptree_75f1aa138fbdf74a(uintptr_t arg1);
-extern swig_intgo _wrap_MVPTreeWrap_add_mvptree_75f1aa138fbdf74a(uintptr_t arg1, swig_type_2 arg2, swig_type_3 arg3);
-extern uintptr_t _wrap_MVPTreeWrap_query_mvptree_75f1aa138fbdf74a(uintptr_t arg1, swig_type_4 arg2, swig_intgo arg3, float arg4, swig_voidp arg5);
-extern swig_intgo _wrap_MVPTreeWrap_save_mvptree_75f1aa138fbdf74a(uintptr_t arg1);
-extern void _wrap_delete_MVPTreeWrap_mvptree_75f1aa138fbdf74a(uintptr_t arg1);
+typedef _gostring_ swig_type_5;
+typedef _gostring_ swig_type_6;
+typedef _gostring_ swig_type_7;
+typedef _gostring_ swig_type_8;
+typedef _gostring_ swig_type_9;
+typedef long long swig_type_10;
+typedef long long swig_type_11;
+extern void _wrap_Swig_free_mvptree_02fb33358e074c0e(uintptr_t arg1);
+extern uintptr_t _wrap_Swig_malloc_mvptree_02fb33358e074c0e(swig_intgo arg1);
+extern uintptr_t _wrap_new_StringVector__SWIG_0_mvptree_02fb33358e074c0e(void);
+extern uintptr_t _wrap_new_StringVector__SWIG_1_mvptree_02fb33358e074c0e(swig_type_1 arg1);
+extern swig_type_2 _wrap_StringVector_size_mvptree_02fb33358e074c0e(uintptr_t arg1);
+extern swig_type_3 _wrap_StringVector_capacity_mvptree_02fb33358e074c0e(uintptr_t arg1);
+extern void _wrap_StringVector_reserve_mvptree_02fb33358e074c0e(uintptr_t arg1, swig_type_4 arg2);
+extern _Bool _wrap_StringVector_isEmpty_mvptree_02fb33358e074c0e(uintptr_t arg1);
+extern void _wrap_StringVector_clear_mvptree_02fb33358e074c0e(uintptr_t arg1);
+extern void _wrap_StringVector_add_mvptree_02fb33358e074c0e(uintptr_t arg1, swig_type_5 arg2);
+extern swig_type_6 _wrap_StringVector_get_mvptree_02fb33358e074c0e(uintptr_t arg1, swig_intgo arg2);
+extern void _wrap_StringVector_set_mvptree_02fb33358e074c0e(uintptr_t arg1, swig_intgo arg2, swig_type_7 arg3);
+extern void _wrap_delete_StringVector_mvptree_02fb33358e074c0e(uintptr_t arg1);
+extern uintptr_t _wrap_new_MVPTreeWrap_mvptree_02fb33358e074c0e(swig_type_8 arg1, swig_intgo arg2, swig_intgo arg3, swig_intgo arg4);
+extern swig_intgo _wrap_MVPTreeWrap_init_mvptree_02fb33358e074c0e(uintptr_t arg1);
+extern swig_intgo _wrap_MVPTreeWrap_add_mvptree_02fb33358e074c0e(uintptr_t arg1, swig_type_9 arg2, swig_type_10 arg3);
+extern uintptr_t _wrap_MVPTreeWrap_query_mvptree_02fb33358e074c0e(uintptr_t arg1, swig_type_11 arg2, swig_intgo arg3, float arg4, swig_voidp arg5);
+extern swig_intgo _wrap_MVPTreeWrap_save_mvptree_02fb33358e074c0e(uintptr_t arg1);
+extern void _wrap_delete_MVPTreeWrap_mvptree_02fb33358e074c0e(uintptr_t arg1);
 #undef intgo
 */
 import "C"
@@ -63,16 +81,138 @@ type _swig_memberptr *byte
 
 type _ sync.Mutex
 
+
+type swig_gostring struct { p uintptr; n int }
+func swigCopyString(s string) string {
+  p := *(*swig_gostring)(unsafe.Pointer(&s))
+  r := string((*[0x7fffffff]byte)(unsafe.Pointer(p.p))[:p.n])
+  Swig_free(p.p)
+  return r
+}
+
 func Swig_free(arg1 uintptr) {
 	_swig_i_0 := arg1
-	C._wrap_Swig_free_mvptree_75f1aa138fbdf74a(C.uintptr_t(_swig_i_0))
+	C._wrap_Swig_free_mvptree_02fb33358e074c0e(C.uintptr_t(_swig_i_0))
 }
 
 func Swig_malloc(arg1 int) (_swig_ret uintptr) {
 	var swig_r uintptr
 	_swig_i_0 := arg1
-	swig_r = (uintptr)(C._wrap_Swig_malloc_mvptree_75f1aa138fbdf74a(C.swig_intgo(_swig_i_0)))
+	swig_r = (uintptr)(C._wrap_Swig_malloc_mvptree_02fb33358e074c0e(C.swig_intgo(_swig_i_0)))
 	return swig_r
+}
+
+type SwigcptrStringVector uintptr
+
+func (p SwigcptrStringVector) Swigcptr() uintptr {
+	return (uintptr)(p)
+}
+
+func (p SwigcptrStringVector) SwigIsStringVector() {
+}
+
+func NewStringVector__SWIG_0() (_swig_ret StringVector) {
+	var swig_r StringVector
+	swig_r = (StringVector)(SwigcptrStringVector(C._wrap_new_StringVector__SWIG_0_mvptree_02fb33358e074c0e()))
+	return swig_r
+}
+
+func NewStringVector__SWIG_1(arg1 int64) (_swig_ret StringVector) {
+	var swig_r StringVector
+	_swig_i_0 := arg1
+	swig_r = (StringVector)(SwigcptrStringVector(C._wrap_new_StringVector__SWIG_1_mvptree_02fb33358e074c0e(C.swig_type_1(_swig_i_0))))
+	return swig_r
+}
+
+func NewStringVector(a ...interface{}) StringVector {
+	argc := len(a)
+	if argc == 0 {
+		return NewStringVector__SWIG_0()
+	}
+	if argc == 1 {
+		return NewStringVector__SWIG_1(a[0].(int64))
+	}
+	panic("No match for overloaded function call")
+}
+
+func (arg1 SwigcptrStringVector) Size() (_swig_ret int64) {
+	var swig_r int64
+	_swig_i_0 := arg1
+	swig_r = (int64)(C._wrap_StringVector_size_mvptree_02fb33358e074c0e(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrStringVector) Capacity() (_swig_ret int64) {
+	var swig_r int64
+	_swig_i_0 := arg1
+	swig_r = (int64)(C._wrap_StringVector_capacity_mvptree_02fb33358e074c0e(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrStringVector) Reserve(arg2 int64) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_StringVector_reserve_mvptree_02fb33358e074c0e(C.uintptr_t(_swig_i_0), C.swig_type_4(_swig_i_1))
+}
+
+func (arg1 SwigcptrStringVector) IsEmpty() (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	swig_r = (bool)(C._wrap_StringVector_isEmpty_mvptree_02fb33358e074c0e(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrStringVector) Clear() {
+	_swig_i_0 := arg1
+	C._wrap_StringVector_clear_mvptree_02fb33358e074c0e(C.uintptr_t(_swig_i_0))
+}
+
+func (arg1 SwigcptrStringVector) Add(arg2 string) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_StringVector_add_mvptree_02fb33358e074c0e(C.uintptr_t(_swig_i_0), *(*C.swig_type_5)(unsafe.Pointer(&_swig_i_1)))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+}
+
+func (arg1 SwigcptrStringVector) Get(arg2 int) (_swig_ret string) {
+	var swig_r string
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	swig_r_p := C._wrap_StringVector_get_mvptree_02fb33358e074c0e(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
+	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
+	var swig_r_1 string
+ swig_r_1 = swigCopyString(swig_r) 
+	return swig_r_1
+}
+
+func (arg1 SwigcptrStringVector) Set(arg2 int, arg3 string) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	C._wrap_StringVector_set_mvptree_02fb33358e074c0e(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_7)(unsafe.Pointer(&_swig_i_2)))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg3
+	}
+}
+
+func DeleteStringVector(arg1 StringVector) {
+	_swig_i_0 := arg1.Swigcptr()
+	C._wrap_delete_StringVector_mvptree_02fb33358e074c0e(C.uintptr_t(_swig_i_0))
+}
+
+type StringVector interface {
+	Swigcptr() uintptr
+	SwigIsStringVector()
+	Size() (_swig_ret int64)
+	Capacity() (_swig_ret int64)
+	Reserve(arg2 int64)
+	IsEmpty() (_swig_ret bool)
+	Clear()
+	Add(arg2 string)
+	Get(arg2 int) (_swig_ret string)
+	Set(arg2 int, arg3 string)
 }
 
 type SwigcptrMVPTreeWrap uintptr
@@ -90,7 +230,7 @@ func NewMVPTreeWrap(arg1 string, arg2 int, arg3 int, arg4 int) (_swig_ret MVPTre
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	swig_r = (MVPTreeWrap)(SwigcptrMVPTreeWrap(C._wrap_new_MVPTreeWrap_mvptree_75f1aa138fbdf74a(*(*C.swig_type_1)(unsafe.Pointer(&_swig_i_0)), C.swig_intgo(_swig_i_1), C.swig_intgo(_swig_i_2), C.swig_intgo(_swig_i_3))))
+	swig_r = (MVPTreeWrap)(SwigcptrMVPTreeWrap(C._wrap_new_MVPTreeWrap_mvptree_02fb33358e074c0e(*(*C.swig_type_8)(unsafe.Pointer(&_swig_i_0)), C.swig_intgo(_swig_i_1), C.swig_intgo(_swig_i_2), C.swig_intgo(_swig_i_3))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg1
 	}
@@ -100,7 +240,7 @@ func NewMVPTreeWrap(arg1 string, arg2 int, arg3 int, arg4 int) (_swig_ret MVPTre
 func (arg1 SwigcptrMVPTreeWrap) Init() (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_MVPTreeWrap_init_mvptree_75f1aa138fbdf74a(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_MVPTreeWrap_init_mvptree_02fb33358e074c0e(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
@@ -109,34 +249,34 @@ func (arg1 SwigcptrMVPTreeWrap) Add(arg2 string, arg3 uint64) (_swig_ret int) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r = (int)(C._wrap_MVPTreeWrap_add_mvptree_75f1aa138fbdf74a(C.uintptr_t(_swig_i_0), *(*C.swig_type_2)(unsafe.Pointer(&_swig_i_1)), C.swig_type_3(_swig_i_2)))
+	swig_r = (int)(C._wrap_MVPTreeWrap_add_mvptree_02fb33358e074c0e(C.uintptr_t(_swig_i_0), *(*C.swig_type_9)(unsafe.Pointer(&_swig_i_1)), C.swig_type_10(_swig_i_2)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg2
 	}
 	return swig_r
 }
 
-func (arg1 SwigcptrMVPTreeWrap) Query(arg2 uint64, arg3 int, arg4 float32, arg5 *int) (_swig_ret Std_vector_Sl_std_string_Sg_) {
-	var swig_r Std_vector_Sl_std_string_Sg_
+func (arg1 SwigcptrMVPTreeWrap) Query(arg2 uint64, arg3 int, arg4 float32, arg5 *int) (_swig_ret StringVector) {
+	var swig_r StringVector
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
 	_swig_i_4 := arg5
-	swig_r = (Std_vector_Sl_std_string_Sg_)(SwigcptrStd_vector_Sl_std_string_Sg_(C._wrap_MVPTreeWrap_query_mvptree_75f1aa138fbdf74a(C.uintptr_t(_swig_i_0), C.swig_type_4(_swig_i_1), C.swig_intgo(_swig_i_2), C.float(_swig_i_3), C.swig_voidp(_swig_i_4))))
+	swig_r = (StringVector)(SwigcptrStringVector(C._wrap_MVPTreeWrap_query_mvptree_02fb33358e074c0e(C.uintptr_t(_swig_i_0), C.swig_type_11(_swig_i_1), C.swig_intgo(_swig_i_2), C.float(_swig_i_3), C.swig_voidp(_swig_i_4))))
 	return swig_r
 }
 
 func (arg1 SwigcptrMVPTreeWrap) Save() (_swig_ret int) {
 	var swig_r int
 	_swig_i_0 := arg1
-	swig_r = (int)(C._wrap_MVPTreeWrap_save_mvptree_75f1aa138fbdf74a(C.uintptr_t(_swig_i_0)))
+	swig_r = (int)(C._wrap_MVPTreeWrap_save_mvptree_02fb33358e074c0e(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func DeleteMVPTreeWrap(arg1 MVPTreeWrap) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_MVPTreeWrap_mvptree_75f1aa138fbdf74a(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_MVPTreeWrap_mvptree_02fb33358e074c0e(C.uintptr_t(_swig_i_0))
 }
 
 type MVPTreeWrap interface {
@@ -144,16 +284,8 @@ type MVPTreeWrap interface {
 	SwigIsMVPTreeWrap()
 	Init() (_swig_ret int)
 	Add(arg2 string, arg3 uint64) (_swig_ret int)
-	Query(arg2 uint64, arg3 int, arg4 float32, arg5 *int) (_swig_ret Std_vector_Sl_std_string_Sg_)
+	Query(arg2 uint64, arg3 int, arg4 float32, arg5 *int) (_swig_ret StringVector)
 	Save() (_swig_ret int)
 }
 
-
-type SwigcptrStd_vector_Sl_std_string_Sg_ uintptr
-type Std_vector_Sl_std_string_Sg_ interface {
-	Swigcptr() uintptr;
-}
-func (p SwigcptrStd_vector_Sl_std_string_Sg_) Swigcptr() uintptr {
-	return uintptr(p)
-}
 

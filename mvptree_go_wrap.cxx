@@ -231,6 +231,15 @@ static void _swig_gopanic(const char *p) {
   if (!(expr)) { _swig_gopanic(msg); } else
 
 
+static _gostring_ Swig_AllocateString(const char *p, size_t l) {
+  _gostring_ ret;
+  ret.p = (char*)malloc(l);
+  memcpy(ret.p, p, l);
+  ret.n = l;
+  return ret;
+}
+
+
 static void Swig_free(void* p) {
   free(p);
 }
@@ -242,11 +251,32 @@ static void* Swig_malloc(int c) {
 
 #include "mvptree_go.h"
 
+
+#include <string>
+
+
+#include <vector>
+#include <stdexcept>
+
+SWIGINTERN std::vector< std::string >::const_reference std_vector_Sl_std_string_Sg__get(std::vector< std::string > *self,int i){
+                int size = int(self->size());
+                if (i>=0 && i<size)
+                    return (*self)[i];
+                else
+                    throw std::out_of_range("vector index out of range");
+            }
+SWIGINTERN void std_vector_Sl_std_string_Sg__set(std::vector< std::string > *self,int i,std::vector< std::string >::value_type const &val){
+                int size = int(self->size());
+                if (i>=0 && i<size)
+                    (*self)[i] = val;
+                else
+                    throw std::out_of_range("vector index out of range");
+            }
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-void _wrap_Swig_free_mvptree_75f1aa138fbdf74a(void *_swig_go_0) {
+void _wrap_Swig_free_mvptree_02fb33358e074c0e(void *_swig_go_0) {
   void *arg1 = (void *) 0 ;
   
   arg1 = *(void **)&_swig_go_0; 
@@ -256,7 +286,7 @@ void _wrap_Swig_free_mvptree_75f1aa138fbdf74a(void *_swig_go_0) {
 }
 
 
-void *_wrap_Swig_malloc_mvptree_75f1aa138fbdf74a(intgo _swig_go_0) {
+void *_wrap_Swig_malloc_mvptree_02fb33358e074c0e(intgo _swig_go_0) {
   int arg1 ;
   void *result = 0 ;
   void *_swig_go_result;
@@ -269,7 +299,165 @@ void *_wrap_Swig_malloc_mvptree_75f1aa138fbdf74a(intgo _swig_go_0) {
 }
 
 
-GoMVPTree::MVPTreeWrap *_wrap_new_MVPTreeWrap_mvptree_75f1aa138fbdf74a(_gostring_ _swig_go_0, intgo _swig_go_1, intgo _swig_go_2, intgo _swig_go_3) {
+std::vector< std::string > *_wrap_new_StringVector__SWIG_0_mvptree_02fb33358e074c0e() {
+  std::vector< std::string > *result = 0 ;
+  std::vector< std::string > *_swig_go_result;
+  
+  
+  result = (std::vector< std::string > *)new std::vector< std::string >();
+  *(std::vector< std::string > **)&_swig_go_result = (std::vector< std::string > *)result; 
+  return _swig_go_result;
+}
+
+
+std::vector< std::string > *_wrap_new_StringVector__SWIG_1_mvptree_02fb33358e074c0e(long long _swig_go_0) {
+  std::vector< std::string >::size_type arg1 ;
+  std::vector< std::string > *result = 0 ;
+  std::vector< std::string > *_swig_go_result;
+  
+  arg1 = (size_t)_swig_go_0; 
+  
+  result = (std::vector< std::string > *)new std::vector< std::string >(arg1);
+  *(std::vector< std::string > **)&_swig_go_result = (std::vector< std::string > *)result; 
+  return _swig_go_result;
+}
+
+
+long long _wrap_StringVector_size_mvptree_02fb33358e074c0e(std::vector< std::string > *_swig_go_0) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  std::vector< std::string >::size_type result;
+  long long _swig_go_result;
+  
+  arg1 = *(std::vector< std::string > **)&_swig_go_0; 
+  
+  result = ((std::vector< std::string > const *)arg1)->size();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+long long _wrap_StringVector_capacity_mvptree_02fb33358e074c0e(std::vector< std::string > *_swig_go_0) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  std::vector< std::string >::size_type result;
+  long long _swig_go_result;
+  
+  arg1 = *(std::vector< std::string > **)&_swig_go_0; 
+  
+  result = ((std::vector< std::string > const *)arg1)->capacity();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_StringVector_reserve_mvptree_02fb33358e074c0e(std::vector< std::string > *_swig_go_0, long long _swig_go_1) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  std::vector< std::string >::size_type arg2 ;
+  
+  arg1 = *(std::vector< std::string > **)&_swig_go_0; 
+  arg2 = (size_t)_swig_go_1; 
+  
+  (arg1)->reserve(arg2);
+  
+}
+
+
+bool _wrap_StringVector_isEmpty_mvptree_02fb33358e074c0e(std::vector< std::string > *_swig_go_0) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(std::vector< std::string > **)&_swig_go_0; 
+  
+  result = (bool)((std::vector< std::string > const *)arg1)->empty();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_StringVector_clear_mvptree_02fb33358e074c0e(std::vector< std::string > *_swig_go_0) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  
+  arg1 = *(std::vector< std::string > **)&_swig_go_0; 
+  
+  (arg1)->clear();
+  
+}
+
+
+void _wrap_StringVector_add_mvptree_02fb33358e074c0e(std::vector< std::string > *_swig_go_0, _gostring_ _swig_go_1) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  std::vector< std::string >::value_type *arg2 = 0 ;
+  
+  arg1 = *(std::vector< std::string > **)&_swig_go_0; 
+  
+  std::vector< std::string >::value_type arg2_str(_swig_go_1.p, _swig_go_1.n);
+  arg2 = &arg2_str;
+  
+  
+  (arg1)->push_back((std::vector< std::string >::value_type const &)*arg2);
+  
+}
+
+
+_gostring_ _wrap_StringVector_get_mvptree_02fb33358e074c0e(std::vector< std::string > *_swig_go_0, intgo _swig_go_1) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  int arg2 ;
+  std::vector< std::string >::value_type *result = 0 ;
+  _gostring_ _swig_go_result;
+  
+  arg1 = *(std::vector< std::string > **)&_swig_go_0; 
+  arg2 = (int)_swig_go_1; 
+  
+  try {
+    result = (std::vector< std::string >::value_type *) &std_vector_Sl_std_string_Sg__get(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    (void)_e;
+    _swig_gopanic("C++ std::out_of_range exception thrown");
+    
+  }
+  
+  _swig_go_result = Swig_AllocateString((*result).data(), (*result).length()); 
+  return _swig_go_result;
+}
+
+
+void _wrap_StringVector_set_mvptree_02fb33358e074c0e(std::vector< std::string > *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  int arg2 ;
+  std::vector< std::string >::value_type *arg3 = 0 ;
+  
+  arg1 = *(std::vector< std::string > **)&_swig_go_0; 
+  arg2 = (int)_swig_go_1; 
+  
+  std::vector< std::string >::value_type arg3_str(_swig_go_2.p, _swig_go_2.n);
+  arg3 = &arg3_str;
+  
+  
+  try {
+    std_vector_Sl_std_string_Sg__set(arg1,arg2,(std::string const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    (void)_e;
+    _swig_gopanic("C++ std::out_of_range exception thrown");
+    
+  }
+  
+  
+}
+
+
+void _wrap_delete_StringVector_mvptree_02fb33358e074c0e(std::vector< std::string > *_swig_go_0) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  
+  arg1 = *(std::vector< std::string > **)&_swig_go_0; 
+  
+  delete arg1;
+  
+}
+
+
+GoMVPTree::MVPTreeWrap *_wrap_new_MVPTreeWrap_mvptree_02fb33358e074c0e(_gostring_ _swig_go_0, intgo _swig_go_1, intgo _swig_go_2, intgo _swig_go_3) {
   char *arg1 = (char *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -293,7 +481,7 @@ GoMVPTree::MVPTreeWrap *_wrap_new_MVPTreeWrap_mvptree_75f1aa138fbdf74a(_gostring
 }
 
 
-intgo _wrap_MVPTreeWrap_init_mvptree_75f1aa138fbdf74a(GoMVPTree::MVPTreeWrap *_swig_go_0) {
+intgo _wrap_MVPTreeWrap_init_mvptree_02fb33358e074c0e(GoMVPTree::MVPTreeWrap *_swig_go_0) {
   GoMVPTree::MVPTreeWrap *arg1 = (GoMVPTree::MVPTreeWrap *) 0 ;
   int result;
   intgo _swig_go_result;
@@ -306,7 +494,7 @@ intgo _wrap_MVPTreeWrap_init_mvptree_75f1aa138fbdf74a(GoMVPTree::MVPTreeWrap *_s
 }
 
 
-intgo _wrap_MVPTreeWrap_add_mvptree_75f1aa138fbdf74a(GoMVPTree::MVPTreeWrap *_swig_go_0, _gostring_ _swig_go_1, long long _swig_go_2) {
+intgo _wrap_MVPTreeWrap_add_mvptree_02fb33358e074c0e(GoMVPTree::MVPTreeWrap *_swig_go_0, _gostring_ _swig_go_1, long long _swig_go_2) {
   GoMVPTree::MVPTreeWrap *arg1 = (GoMVPTree::MVPTreeWrap *) 0 ;
   char *arg2 = (char *) 0 ;
   uint64_t arg3 ;
@@ -335,14 +523,14 @@ intgo _wrap_MVPTreeWrap_add_mvptree_75f1aa138fbdf74a(GoMVPTree::MVPTreeWrap *_sw
 }
 
 
-std::vector< std::string > *_wrap_MVPTreeWrap_query_mvptree_75f1aa138fbdf74a(GoMVPTree::MVPTreeWrap *_swig_go_0, long long _swig_go_1, intgo _swig_go_2, float _swig_go_3, intgo *_swig_go_4) {
+std::vector< std::string > *_wrap_MVPTreeWrap_query_mvptree_02fb33358e074c0e(GoMVPTree::MVPTreeWrap *_swig_go_0, long long _swig_go_1, intgo _swig_go_2, float _swig_go_3, intgo *_swig_go_4) {
   GoMVPTree::MVPTreeWrap *arg1 = (GoMVPTree::MVPTreeWrap *) 0 ;
   uint64_t arg2 ;
   int arg3 ;
   float arg4 ;
   int *arg5 = (int *) 0 ;
   uint64_t const *argp2 ;
-  std::vector< std::string > result;
+  std::vector< std::string > *result = 0 ;
   std::vector< std::string > *_swig_go_result;
   
   arg1 = *(GoMVPTree::MVPTreeWrap **)&_swig_go_0; 
@@ -357,13 +545,13 @@ std::vector< std::string > *_wrap_MVPTreeWrap_query_mvptree_75f1aa138fbdf74a(GoM
   arg4 = (float)_swig_go_3; 
   arg5 = *(int **)&_swig_go_4; 
   
-  result = (arg1)->query(arg2,arg3,arg4,arg5);
-  *(std::vector< std::string > **)&_swig_go_result = new std::vector< std::string >(result); 
+  result = (std::vector< std::string > *) &(arg1)->query(arg2,arg3,arg4,arg5);
+  *(std::vector< std::string > **)&_swig_go_result = result; 
   return _swig_go_result;
 }
 
 
-intgo _wrap_MVPTreeWrap_save_mvptree_75f1aa138fbdf74a(GoMVPTree::MVPTreeWrap *_swig_go_0) {
+intgo _wrap_MVPTreeWrap_save_mvptree_02fb33358e074c0e(GoMVPTree::MVPTreeWrap *_swig_go_0) {
   GoMVPTree::MVPTreeWrap *arg1 = (GoMVPTree::MVPTreeWrap *) 0 ;
   int result;
   intgo _swig_go_result;
@@ -376,7 +564,7 @@ intgo _wrap_MVPTreeWrap_save_mvptree_75f1aa138fbdf74a(GoMVPTree::MVPTreeWrap *_s
 }
 
 
-void _wrap_delete_MVPTreeWrap_mvptree_75f1aa138fbdf74a(GoMVPTree::MVPTreeWrap *_swig_go_0) {
+void _wrap_delete_MVPTreeWrap_mvptree_02fb33358e074c0e(GoMVPTree::MVPTreeWrap *_swig_go_0) {
   GoMVPTree::MVPTreeWrap *arg1 = (GoMVPTree::MVPTreeWrap *) 0 ;
   
   arg1 = *(GoMVPTree::MVPTreeWrap **)&_swig_go_0; 
