@@ -114,6 +114,8 @@
 #define cimg_time __TIME__
 #endif
 
+#define cimg_display 0
+
 // Disable silly warnings on some Microsoft VC++ compilers.
 #ifdef _MSC_VER
 #pragma warning(push)
