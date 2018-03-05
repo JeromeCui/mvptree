@@ -11,6 +11,26 @@
 
 
 namespace GoMVPTree {
+    static inline float HammingDistanceComp(MVPDP *pointA, MVPDP *pointB) {
+        if (!pointA || !pointB || pointA->datalen != pointB->datalen) {
+            return -1.0f;
+        }
+    
+        uint64_t a = *((uint64_t*) pointA->data);
+        uint64_t b = *((uint64_t*) pointB->data);
+    
+        uint64_t x = a^b;
+        const uint64_t m1  = 0x5555555555555555ULL;
+        const uint64_t m2  = 0x3333333333333333ULL;
+        const uint64_t h01 = 0x0101010101010101ULL;
+        const uint64_t m4  = 0x0f0f0f0f0f0f0f0fULL;
+        x -= (x >> 1) & m1;
+        x = (x & m2) + ((x >> 2) & m2);
+        x = (x + (x >> 4)) & m4;
+    
+        return (float)((x*h01)>>56);
+    };
+    
     /**
      * An MVPTree wrap for golang
      */
@@ -107,26 +127,6 @@ namespace GoMVPTree {
         const int mPathLength;
         const int mLeafCap;
         MVPTree *mTree;
-    };
-
-    static inline float HammingDistanceComp(MVPDP *pointA, MVPDP *pointB) {
-        if (!pointA || !pointB || pointA->datalen != pointB->datalen) {
-            return -1.0f;
-        }
-    
-        uint64_t a = *((uint64_t*) pointA->data);
-        uint64_t b = *((uint64_t*) pointB->data);
-    
-        uint64_t x = a^b;
-        const uint64_t m1  = 0x5555555555555555ULL;
-        const uint64_t m2  = 0x3333333333333333ULL;
-        const uint64_t h01 = 0x0101010101010101ULL;
-        const uint64_t m4  = 0x0f0f0f0f0f0f0f0fULL;
-        x -= (x >> 1) & m1;
-        x = (x & m2) + ((x >> 2) & m2);
-        x = (x + (x >> 4)) & m4;
-    
-        return (float)((x*h01)>>56);
     };
 }
 
